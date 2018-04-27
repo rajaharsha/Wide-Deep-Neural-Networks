@@ -58,11 +58,15 @@ def _download_and_clean_file(filename, url):
 def main(_):
   if not tf.gfile.Exists(FLAGS.data_dir):
     tf.gfile.MkDir(FLAGS.data_dir)
-
-  training_file_path = os.path.join(FLAGS.data_dir, TRAINING_FILE)
+  
+  windows_file_path = "C:/Users/Raja Harsha/Documents/GitHub/Wide-Deep-Neural-Networks/LinearModel/wide_deep" ## added for testing
+  ## training_file_path = os.path.join(FLAGS.data_dir, TRAINING_FILE) ## comented out for testing
+  training_file_path = os.path.join(windows_file_path, TRAINING_FILE) ## added for testing
+  print ("File saved in director:" , training_file_path) ## added for testing
   _download_and_clean_file(training_file_path, TRAINING_URL)
 
-  eval_file_path = os.path.join(FLAGS.data_dir, EVAL_FILE)
+  ## eval_file_path = os.path.join(FLAGS.data_dir, EVAL_FILE) ## commented out for testing
+  eval_file_path = os.path.join(windows_file_path, EVAL_FILE) ## added for testing
   _download_and_clean_file(eval_file_path, EVAL_URL)
 
 
